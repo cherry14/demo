@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	#box{
+
+		width: 200px;
+		height: 200px;
+		/*margin: 200px auto;*/
+		position: relative;
+		top:0;
+		left:0;
+		transform: rotate3d(1,1,0,-30deg);
+		transform-style: preserve-3d;
+		/*animation:move 5s  infinite linear alternate;*/
+		
+
+	}
+	#box:hover .front{
+		transform: translateZ(200px);
+	}
+	#box:hover .back{
+		transform: translateZ(-200px);
+	}
+	#box:hover .left{
+		transform: translateX(-200px) rotateY(-90deg);
+	}
+	#box:hover .right{
+		transform: translateX(200px) rotateY(90deg);
+	}
+	#box:hover .top{
+		transform: translateY(-200px) rotateX(90deg);
+	}
+	#box:hover .botton{
+		transform: translateY(200px) rotateX(-90deg);
+	}
+	/*#box:hover{
+		animation-play-state: paused;
+
+	}*/
+	@keyframes move{
+		0%{
+			transform: rotate3d(1,1,1,60deg);
+		}
+		50%{
+			
+			transform: rotate3d(1,0,1,-60deg);
+		}
+		100%{
+			
+			transform: rotate3d(1,1,0,180deg);
+		}
+	}
+	.front{
+		opacity: 0.9;
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		background-color: orange;
+		transform: translateZ(100px);
+	}
+	
+	.back{
+		opacity: 0.9;
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		background-color: green;
+		transform: translateZ(-100px);
+	}
+	.left{
+		opacity: 0.9;
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		background-color: pink;
+		transform: translateX(-100px) rotateY(-90deg);
+	}
+	.right{
+		opacity: 0.9;
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		background-color: blue;
+		transform: translateX(100px) rotateY(90deg);
+	}
+	.top{
+		opacity: 0.9;
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		background-color: brown;
+		transform: translateY(-100px) rotateX(90deg);
+	}
+	.bottom{
+		opacity: 0.9;
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		background-color:yellow;
+		transform: translateY(100px) rotateX(-90deg);
+	}
+	ul{
+		list-style:none;
+	}
+	li{
+		float:left;
+		width: 62.66px;
+		height: 62.66px;
+		border: 2px #000 solid;
+		background-color: #ff5000 ;
+	}
+	.one {
+		background-color: orange;
+	}
+	.two{
+		background-color: red;
+	}
+	.three{
+		background-color: green;
+	}
+	.four{
+		background-color: blue;
+	}
+	.five{
+		background-color: white;
+	}
+	.six{
+		background-color: red;
+	}
+	.seven{
+		background-color: yellow;
+	}
+	.eight{
+		background-color: yellow;
+	}
+	.night{
+		background-color: blue;
+	}
+	/*定位盒子*/
+	#bigbang{
+		/*margin: 200px auto;*/
+		position: relative;
+		top:200px;
+		left:600px;
+	}
+
+	#secondbox{
+			width: 50px;
+			height: 50px;
+
+			position: relative;
+			top:125px;
+			left:75px;
+			transform: rotate3d(1,1,0,-30deg) translateZ(100px);
+			transform-style: preserve-3d;
+	}
+	.second_left {
+			opacity: 1;
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			background-color: black
+			;
+			transform: translateX(-25px) rotateY(-90deg);
+	}
+	.second_front{
+		opacity: 1;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		background-color: orange;
+		transform: translateZ(25px);
+	}
+	
+	.second_back{
+		opacity: 1;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		background-color: black;
+		transform: translateZ(-25px);
+	}
+
+	.second_right{
+		opacity: 1;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		background-color: blue;
+		transform: translateX(25px) rotateY(90deg);
+	}
+	.second_top{
+		opacity: 1;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		background-color: brown;
+		transform: translateY(-25px) rotateX(90deg);
+	}
+	.second_bottom{
+		opacity: 1;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		background-color:black;
+		transform: translateY(25px) rotateX(-90deg);
+	}
+
+
+
+
+
+	</style>
+</head>
+<body>
+<div id='bigbang'>
+	<!-- 中间的小盒子 -->
+
+	<div id='secondbox'>
+		<div class='second_left'></div>
+		<div class='second_right'></div>
+		<div class='second_front'></div>
+		<div class='second_back'></div>
+		<div class='second_top'></div>
+		<div class='second_bottom'></div>
+		
+	</div> 
+	<!-- 外面大盒子 -->
+	<div id="box">
+	<div class="front">
+		<ul>
+			<li class='one'></li>
+			<li class='two'></li>
+			<li class='three'></li>
+			<li class='four'></li>
+			<li class='five'></li>
+			<li class='six'></li>
+			<li class='seven'></li>
+			<li class='eight'></li>
+			<li class='night'></li>
+		
+		</ul>
+	</div>
+	<div class="back">
+		<ul>
+			<li class='one'></li>
+			<li class='two'></li>
+			<li class='three'></li>
+			<li class='four'></li>
+			<li class='five'></li>
+			<li class='six'></li>
+			<li class='seven'></li>
+			<li class='eight'></li>
+			<li class='night'></li>
+		
+		</ul>
+	</div>
+	<div class="left">
+		<ul>
+			<li class='one'></li>
+			<li class='two'></li>
+			<li class='three'></li>
+			<li class='four'></li>
+			<li class='five'></li>
+			<li class='six'></li>
+			<li class='seven'></li>
+			<li class='eight'></li>
+			<li class='night'></li>
+		
+		</ul>
+	</div>
+	<div class="right">
+		<ul>
+			<li class='one'></li>
+			<li class='two'></li>
+			<li class='three'></li>
+			<li class='four'></li>
+			<li class='five'></li>
+			<li class='six'></li>
+			<li class='seven'></li>
+			<li class='eight'></li>
+			<li class='night'></li>
+		
+		</ul>
+	</div>
+
+	<div class="top">
+		<ul>
+			<li class='one'></li>
+			<li class='two'></li>
+			<li class='three'></li>
+			<li class='four'></li>
+			<li class='five'></li>
+			<li class='six'></li>
+			<li class='seven'></li>
+			<li class='eight'></li>
+			<li class='night'></li>
+		
+		</ul>
+	</div>
+	<div class="bottom">
+		<ul>
+			<li class='one'></li>
+			<li class='two'></li>
+			<li class='three'></li>
+			<li class='four'></li>
+			<li class='five'></li>
+			<li class='six'></li>
+			<li class='seven'></li>
+			<li class='eight'></li>
+			<li class='night'></li>
+		
+		</ul>
+	</div>
+</div>
+</div>
+
+	
+</body>
+<script>
+	
+        document.addEventListener('DOMContentLoaded',function(){
+            var oBox = document.getElementById('box');
+            var bBox = document.getElementById('secondbox');
+
+            var x = 30;
+            var y = -60;
+            document.onmousedown = function(ev){
+                var oEvent = ev||event;
+                var disX = oEvent.clientX - y;
+                var disY = oEvent.clientY - x;
+                document.onmousemove = function(ev){
+                    var oEvent = ev||event;
+                    x = oEvent.clientX - disX;
+                    y = oEvent.clientY - disY;
+                    oBox.style.transform = 'perspective(800px) rotateY('+(x/2)+'deg) rotateX('+(-y/2)+'deg)';
+                     bBox.style.transform = 'perspective(800px) rotateY('+x+'deg) rotateX('+(-y)+'deg)';
+                };
+                document.onmouseup = function(){
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                };
+                return false;
+            };
+        },false);
+   
+</script>
+</html>
