@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="assets/mui/css/mui.min.css">
+	<link rel="stylesheet" href="assets/mui/css/iconfont.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/cart.css">
+	
+	<script src="assets/mui/js/mui.min.js"></script>
+	<!-- <script src="assets/mui/js/mui.min.js"></script> -->
+	<script src="assets/zepto/zepto.min.js"></script>
+
+	<script src="js/public.js"></script>
+
+	<script src="js/cart.js"></script>
+	<script src="assets/artTemplate/template-native.js"></script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav head">
+		
+		<h1 class="mui-title">购物车</h1>
+		
+	</header>
+	<nav class="mui-bar mui-bar-tab footer">
+		<a class="mui-tab-item " href="index.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" href="category.html">
+			<span class="mui-icon mui-icon-bars"></span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="mui-tab-item mui-active" href="cart.html">
+			<span class="mui-icon iconfont icon-gouwuche"></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="mui-tab-item" href="user.html">
+			<span class="mui-icon mui-icon-person"></span>
+			<span class="mui-tab-label">会员中心</span>
+		</a>
+	</nav>
+	<div class="mui-content">
+		<ul class="mui-table-view" id="selector">
+		 			
+   
+   		</ul>
+   		<div id = "sumPrice">
+   			订单总价：
+   			￥<span>556</span>
+   			<button id= "payCart">确认支付</button>
+   			
+   		</div>
+   		<!-- 弹出菜单 -->
+   		<!-- <div id="popover" class="mui-popover">
+  			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell">
+			    <a href="#">
+			    	
+			    </a>
+			    </li>
+			    <li class="mui-table-view-cell"><a href="#">Item2</a></li>
+			    <li class="mui-table-view-cell"><a href="#">Item3</a></li>
+			    <li class="mui-table-view-cell"><a href="#">Item4</a></li>
+			    <li class="mui-table-view-cell"><a href="#">Item5</a></li>
+  			</ul>
+		</div>
+		<a href="#popover" id="openPopover" class="mui-btn mui-btn-primary mui-btn-block">打开弹出菜单</a> -->
+	</div>
+</body>
+<script type ="text/template" id = 'cartTpl'>
+	<%for (var i = 0;i<result.length;i++){%>
+		<li class="mui-table-view-cell mui-media">
+		 		<div class="mui-slider-right mui-disabled ">
+		
+					<a href="javascript:;" class="mui-btn mui-btn-blue edit-cart" data-id="<%=result[i].id%>" data-size="<%=result[i].size%>">编辑</a>
+					<a href="javascript:;" class="mui-btn mui-btn-red del-cart" data-id="<%=result[i].id%>">删除</a>
+				</div>
+	     
+				<div class="mui-media-body mui-slider-handle">
+						<a href="javascript:;">
+		            		
+		            			<img src="images/active1.png" alt="" class='mui-media-object mui-pull-left'>
+		            		
+		            		
+		            		<div class="mui-media-body">
+				                <%=result[i].proName%>
+				                <p class='mui-ellipsis'>
+					                <input type="checkbox" class="dadada"  data-price="<%=result[i].price%>"  data-id="<%=result[i].id%> " >
+				               		 ¥<span class="price"><%=result[i].price%></span>
+					                ¥<del><%=result[i].oldPrice%></del>
+					                鞋码：<span><%=result[i].pic.size%></span>
+					                X<span>3</span>
+				                </p>
+			           		 </div>
+		        		</a>
+				</div>
+        	
+   			</li>
+
+	<%}%>
+	
+	
+</script>
+</html>

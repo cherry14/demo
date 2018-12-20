@@ -1,0 +1,16 @@
+.getcode {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	color:#006699;
+	font-size: 12px;
+}
+.login-now {
+	display: block;
+	padding-right: 20px;
+	text-align: right;
+	margin-top: 10px;
+	color:#006699;
+
+}

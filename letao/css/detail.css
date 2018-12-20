@@ -1,0 +1,92 @@
+.title {
+	padding: 15px;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.price {
+	padding: 10px;
+}
+.price > span {
+	font-size: 18px;
+	color:#ff5000;
+}
+.price >  del {
+	font-size: 12px;
+	padding-left: 10px;
+	color:#666;
+}
+.size {
+	font-size: 14px;
+	
+}
+.size > span {
+	display: inline-block;
+	padding: 10px;
+	border: 1px solid #999;
+	margin: 5px;
+}
+.num {
+	padding: 10px;
+	font-size: 14px;
+	overflow: hidden;
+}
+.num .selectnum {
+	float:left;
+	vertical-align: center;
+}
+.num .selectnum >span {
+	display: inline-block;
+	text-align: center;
+	line-height: 28px;
+	font-size: 14px;
+	width: 28px;
+	height: 28px;
+	border: 1px solid #999;
+
+}
+.num .selectnum >input {
+	display: inline-block;
+	/*width: 28px;*/
+	height: 28px;
+	text-align: center;
+	line-height: 28px;
+}
+.sy {
+	display: inline-block;
+	padding-left: 15px;
+}
+.btns {
+	margin: 0 auto;
+	text-align: center;
+
+
+}
+.btns > a {
+	display: inline-block;
+	width: 40%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	padding:0 5px;
+	border: 1px solid transparent;
+	border-radius: 2px;
+	color:#fff;
+	font-style: 16px;
+
+}
+.btns > .cars-btn {
+	background-color: #ff5000;
+}
+.btns > .add-btn {
+	background-color: #e92331;
+
+}
+
+.active {
+	background-color: #FF5000;
+	color:#fff;
+	border: none;
+}
+
+

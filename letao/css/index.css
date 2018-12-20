@@ -1,0 +1,130 @@
+/*.nav-link{
+	padding:10px;
+}
+
+.nav-link a{
+	display:block;
+	width:33.333%;
+	float:left;
+}
+
+.nav-link a img{
+	width:100%;
+	vertical-align:top;
+}
+
+.brand{
+	padding:0 10px;
+}
+
+.brand .title{
+	width:100%;
+	vertical-align:top;
+}
+
+.brand .list{
+	padding:10px 0;
+}
+
+.brand .list li{
+	width:25%;
+	float:left;
+}
+
+.brand .list a{
+	display:block;
+}
+
+.brand .list img{
+	width:100%;
+}
+
+
+*/
+/*<!-- 图片导航 -->*/
+.nav-link {
+	padding: 10px;
+}
+.nav-link a {
+	float: left;
+	width: 33.33%;
+	display: block;
+
+}
+.nav-link a img {
+	width: 100%;
+}
+/*<!-- 品牌专区 -->*/
+.brand {
+	width: 100%;
+}
+.title {
+	width: 100%;
+}
+.title img {
+	width: 100%;
+}
+.brand-list {
+	padding: 10px 0;
+	box-sizing:border-box;
+}
+.brand-list li {
+	float: left;
+	width: 25%;
+}
+.brand-list li img {
+	width: 100%;
+}
+	/*<!-- 运动生活专区 -->*/
+
+.sprot {
+	width: 100%;
+}
+.sprot-list {
+	width: 100%;
+	padding: 10px;
+
+}
+.sprot-list li {
+	width: 50%;
+	float: left;
+	padding: 5px;
+	/*margin: 5px;*/
+	/*border: 1px solid #ccc;*/
+
+}
+.sprot-list li a{
+	display: block;
+	padding: 0 5px;
+	box-shadow: 0 0 5px #ccc;
+	padding-bottom: 10px;
+}
+.sprot-list li  img {
+	width: 100%;
+}
+.sprot-list li a>span{
+	display: block;
+	height: 44px;
+	font-size: 12px;
+	color:#8f8f94;
+	text-align: center;
+	padding: 6px;
+	line-height: 18px;
+	margin-bottom: 10px;
+}
+.sprot-list li a>p {
+	text-align: center;
+	font-size: 12px;
+}
+.sprot-list li a>p>span {
+	color:#f30;
+}
+.sprot-list li a>button {
+	display: block;
+	cursor: pointer;
+	background-color: #006699;
+	color:#fff;
+	font-size: 14px;
+	margin: 0 auto;
+	
+}
