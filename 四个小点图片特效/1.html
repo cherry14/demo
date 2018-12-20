@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.left{
+			position: relative;
+			float: left;
+			width: 235px;
+			height: 3px;
+			background-color: gray;
+			margin: 300px 100px;
+			animation: fadeInWidth2 1.5s .5s linear both;
+		}
+		.div{
+			position: absolute;
+			top: -268px;
+			left: 0;
+			width: 259px;
+			height: 255px;
+			background: url(pl_d2.png) no-repeat;
+			animation: fadeInWidth1 1.2s .5s linear both;
+		}
+		.str{
+			position: absolute;
+			bottom: -268px;
+			left: 0;
+			width: 259px;
+			height: 255px;
+			background: url(pl_d3.png) no-repeat left bottom;
+			animation: fadeInWidth1 1.2s .5s linear both;
+		}
+		.right{
+			position: relative;
+			float: right;
+			width: 235px;
+			height: 3px;
+			background-color: gray;
+			margin: 300px 100px;
+			animation: fadeInWidth2 1.5s .5s linear both;
+		}
+		.nav{
+			position: absolute;
+			top: -268px;
+			right: 0;
+			width: 259px;
+			height: 255px;
+			transform: rotateY(180deg);
+			background: url(pl_d2.png) no-repeat;
+			animation: fadeInWidth1 1.2s .5s linear both;
+		}
+		.num{
+			position: absolute;
+			bottom: -268px;
+			right: 0;
+			width: 259px;
+			height: 255px;
+			transform: scaleX(-1);
+			background: url(pl_d3.png) no-repeat left bottom;
+			animation: fadeInWidth1 1.2s .5s linear both;
+		}
+		@keyframes fadeInWidth1 {
+    		0% {
+    		    width: 0;
+    		    height: 10px;
+    		}
+    		50% {
+    		    width: 260px;
+    		    height: 10px;
+    		}
+    		100% {
+    		    width: 260px;
+    		    height: 260px;
+    		}
+		}
+		@keyframes fadeInWidth2{
+			0% {
+				width: 0;
+				height: 3px;
+			}
+			100%{
+				width: 235px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="left">
+		<div class="div"></div>
+		<div class="str"></div>
+	</div>
+	<div class="right">
+		<div class="nav"></div>
+		<div class="num"></div>
+	</div>
+</body>
+</html>
