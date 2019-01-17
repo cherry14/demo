@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='./lib/vue-2.4.0.js'></script>
+	<style>
+		body{
+			background-color: #111;
+		}
+		.textp{
+			position: relative;
+			
+			width: 20px;
+			font-size: 26px;
+			word-wrap: break-word;
+			color:lightgreen;
+			font-weight: 700;
+			text-shadow: 5px 5px 5px;
+
+		}
+		.text1{
+			position: relative;
+			top:20px;
+			left: 220px;
+
+		}
+		.text2{
+			position: relative;
+			top:0px;
+			left: 420px;
+		}
+		#app {
+			height: 800px;
+			overflow: hidden;
+			background-color: transparent;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="app">
+		<!-- <input type="button" value="start" @mouseover= 'run'> -->
+		<p class="textp text1" @mouseover= 'run'>{{msg}}</p>
+		<p class="textp text2" @mouseover= 'run'>{{msg}}</p>
+		<p class="textp text3" @mouseover= 'run'>{{msg}}</p>
+		<p class="textp text4" @mouseover= 'run'>{{msg}}</p>
+		<p class="textp text5" @mouseover= 'run'>{{msg}}</p>
+		<p class="textp text6" @mouseover= 'run'>{{msg}}</p>
+		<p class="textp text7" @mouseover= 'run'>{{msg}}</p>
+		<p class="textp text8" @mouseover= 'run'>{{msg}}</p>
+		<p class="textp text9" @mouseover= 'run'>{{msg}}</p>
+		<p class="textp text10" @mouseover= 'run'>{{msg}}</p>
+		<p class="textp text11" @mouseover= 'run'>{{msg}}</p>
+	</div>
+	
+</body>
+<script>
+var vm = new Vue({
+	el:'#app',
+	data:{
+		msg:'heimachengxuyuantwotwoflag'
+	},
+	methods:{
+		run(){
+			setInterval(()=>{
+				let startstr = this.msg.substring(0,1)
+				let endstr = this.msg.substring(1)
+				this.msg = endstr + startstr
+				var text1= document.querySelector('.text1');
+				text1.style.transition = '5s';
+				text1.style.transform = 'translate(10px,800px)';
+				
+			},50)
+			
+		}
+	}
+})
+	
+</script>
+
+</html>
