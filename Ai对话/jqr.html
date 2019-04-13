@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.jqr_zx {
+		  width: 390px;
+		  height: 500px;
+		  margin: 50px auto;
+
+		}
+		.jqr_zx .hide {
+		  position: absolute;
+		  right: 20px;
+		  top: 60px;
+		  background: #fff;
+		  width: 24px;
+		  height: 4px;
+		}
+		.jqr_zx .clear {
+		  position: absolute;
+		  right: 60px;
+		  top: 55px;
+		  color: #fff;
+		}
+		.jqr_zx .container {
+		  width: 390px;
+		  height: 500px;
+		  border: 1px solid dodgerblue;
+		  margin: 50px auto;
+		  border-radius: 10px;
+		}
+		.jqr_zx .speak {
+		  width: 100%;
+		  height: 410px;
+		  /*overflow-y: scroll;*/
+		  overflow: auto;
+		}
+		.jqr_zx .controller {
+		  width: 100%;
+		  height: 90px;
+		  border-top: 1px solid cadetblue;
+		  position: relative;
+		}
+		.jqr_zx .controller input[type=text] {
+		  width: 240px;
+		  height: 50px;
+		  border: 1px solid deepskyblue;
+		  border-radius: 7px;
+		  outline: none;
+		  position: absolute;
+		  left: 30px;
+		  top: 50%;
+		  margin-top: -25px;
+		  font-size: 17px;
+		}
+		.jqr_zx .controller input[type=submit] {
+		  width: 70px;
+		  height: 50px;
+		  border-radius: 10px;
+		  background-color: greenyellow;
+		  border: 0;
+		  font-size: 20px;
+		  position: absolute;
+		  right: 20px;
+		  top: 50%;
+		  outline: none;
+		  margin-top: -25px;
+		  cursor: pointer;
+		  color: #fff;
+		}
+		.jqr_zx .speak .person,
+		.jqr_zx .jqr {
+		  /*height: 50px;*/
+		  /*border: 1px solid #ccc;*/
+		  border-radius: 10px;
+		  overflow: hidden;
+		}
+		.jqr_zx span {
+		  width: 40px;
+		  height: 40px;
+		  display: block;
+		  background: hotpink;
+		  border-radius: 50%;
+		  margin-top: 10px;
+		  line-height: 40px;
+		  text-align: center;
+		  color: #fff;
+		  float: left;
+		  margin-right: 15px;
+		  font-size: 18px;
+		  margin-left: 15px;
+		}
+		.jqr_zx p {
+		  /*margin-top: 17px;*/
+		  width: 40%;
+		  margin: 17px 2px 0 2px;
+		  float: left;
+		  padding: 5px 5px;
+		  border: 1px solid #ccc;
+		  border-radius: 7px;
+		  position: relative;
+		  /*color: #fff;*/
+		}
+		.jqr_zx .person p:before {
+		  content: '';
+		  position: absolute;
+		  top: 10px;
+		  left: -8px;
+		  border-right: 8px solid #ccc;
+		  border-top: 4px solid  transparent;
+		  border-bottom: 4px solid  transparent;
+		  margin-top: -4px;
+		}
+		.jqr_zx .jqr span {
+		  background: greenyellow;
+		  float: right;
+		}
+		.jqr_zx .jqr p {
+		  float: right;
+		}
+		.jqr_zx .jqr p:before {
+		  content: '';
+		  position: absolute;
+		  top: 10px;
+		  right: -8px;
+		  border-left: 8px solid #ccc;
+		  border-top: 4px solid  transparent;
+		  border-bottom: 4px solid  transparent;
+		  margin-top: -4px;
+		}
+		</style>
+</head>
+<body>
+	<div class="jqr_zx">
+        	
+        	<div class="container">       		
+		       	 <div class="speak">
+		            <!-- 我-->
+		            <div class="person"  style="display: none">
+		                <span>我</span>
+		                <p>你好</p>
+		            </div>
+
+		
+		            <!-- 机器人-->
+		            <div class="jqr" style="display: none">
+		                <span>机</span>
+		                <p id='jqrp'>呵呵</p>		
+		            </div>
+	       		</div>
+		       <div class="controller">
+		           <form action="javascript:void(0)">
+		               <input type="text" placeholder="在线咨询,请在这里输入"></input>
+		               <input type="submit" value="发送"/>
+		           </form>		
+		       </div>
+	    	</div>      	
+      </div>
+</body>
+	<script src="jquery-3.1.1.min.js"></script>
+	<script>
+
+	//自己写的
+
+		$(function(){
+			$('input[type=submit]').click(function(){
+				alert()
+			var text = $('input[type=text]').val();
+			if(!text){return;}
+			var personClone = $('person').first().clone();
+			$('.speak').append(personClone);
+			personClone.find('p').text(text);
+			personClone.show();
+
+			$.ajax({
+				type:'post',
+				url:'http://tuling123.com/openapi/api',
+				data:{
+					'info':text,
+					'key':'4f000ee2632648d981315be513491e69',
+					'userid':123456
+				},
+				dataType:'json',
+				success:function(data){
+					var jqrClone = $('.jqr').first().clone();
+					$('speak').append(jqrClone);
+					jqrClone.find('p').text(data.text);
+					jqrClone.show();
+					$('.speak').scrollTop($('.speak')[0].scrollHeight);
+
+				},
+				error:function(){
+
+				}
+			})
+
+
+				
+
+
+
+			})
+		})
+
+
+		//陈双林写的
+		$(function(){
+			$('input[type=submit]').click(function(){
+				// console.log(666)
+				var text=$('input[type=text]').val();
+				if (!text) { return; }
+				var personClone = $('.person').first().clone();
+				$('.speak').append(personClone);
+				personClone.find('p').text(text);
+				personClone.show();
+
+				$.ajax({
+					type:'post',
+					url:'http://www.tuling123.com/openapi/api',
+					data:{
+						'info':text,
+						'key':'4f000ee2632648d981315be513491e69',
+						'userid':123456
+					},
+					dataType:'json',
+					success:function(data){
+						// console.log(data)
+						var jqrClone = $('.jqr').first().clone();
+						$('.speak').append(jqrClone);
+						jqrClone.find('p').text(data.text);
+						jqrClone.show();
+						 $('.speak').scrollTop( $('.speak')[0].scrollHeight );
+					},
+					error:function(erro){
+
+					}
+
+				})
+
+
+			})
+		})
+
+
+	</script>
+</html>
