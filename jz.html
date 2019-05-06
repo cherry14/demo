@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style >
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .container{
+        position: relative;
+        width: 1000px;
+        height: 300px;
+        background-color: rgb(161, 147, 68);
+        margin: 100px auto;
+       
+    }
+    .zhou{
+        width: 20px;
+        height: 300px;
+        background-color: #000;
+        position: absolute;
+        top: 0;
+        z-index: 5;
+    }
+    .zhou::before{
+        content: '';
+        width: 20px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #000;
+        position: absolute;
+        top: -28px;
+        left: 0;
+    }
+    .zhou::after{
+        content: '';
+        width: 20px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #000;
+        position: absolute;
+        bottom: -28px;
+        left: 0;
+    }
+    
+    .zhouleft{
+        left: 500px;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+        animation: zhouleft  5s ease  forwards;
+    }
+    @keyframes zhouleft{
+        0%{
+            left: 481px; 
+            
+        }
+        100%{
+            left: 0;
+           
+        }
+    }
+    .zhouright{
+        right: 0;
+        animation: zhouright  5s ease  forwards;
+    }
+    @keyframes zhouright{
+        0%{
+           right: 481px; 
+            
+        }
+        100%{
+            right: 0;
+           
+        }
+    }
+    
+    .content{
+        width: 500px;
+        height: 300px;
+        
+       
+        background-color:rgb(161, 147, 68) ;
+        float: left;
+        overflow: hidden;
+
+    }
+    .contentleft{
+        padding: 40px 0 40px 276px;
+        box-sizing: border-box;
+        font-size: 14px;
+        color:#fff;
+        line-height: 22px;
+    }
+    .contentright{
+        padding: 40px 0 40px 0px;
+        box-sizing: border-box;
+        font-size: 14px;
+        color:#fff;
+        line-height: 22px;
+    }
+    .contentleft>.miskleft{
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        width: 500px;
+        height: 300px;
+      
+        background-color: #FFF;
+        animation: miskleft  5s ease  forwards ;
+        text-align: right;
+    }
+    @keyframes miskleft{
+        0%{
+           
+            left: 0;
+            
+        }
+        100%{
+            left: -500PX;
+           
+        }
+    }
+    .miskright{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 500px;
+        height: 300px;
+        text-align: left;
+        background-color: #FFF;
+        animation: miskright  5s ease   forwards ;
+    }
+    @keyframes miskright{
+        0%{
+           
+            right: 0;
+            
+        }
+        100%{
+            right: -500PX;
+           
+        }
+    }
+    .text{
+        opacity: 0;
+        animation:text  5s ease 1s  forwards ; 
+    }
+    @keyframes text{
+        0%{
+           
+           opacity: 0;
+            
+        }
+        50%{
+            opacity: 0.5;
+        }
+        100%{
+            opacity: 1;
+           
+        }
+    }
+
+</style>
+<body>
+    <div class="container">
+
+        <div class="zhouleft zhou">
+
+        </div>
+        <div class="contentleft  content">
+                <div class="text">
+                        天下丛林饭似山，钵盂到处任君餐。 
+                        <br>
+                        朕为山河大地主，忧国忧民事转烦。 
+                        <br>
+                        来时糊涂去时迷，空在人间走一回。 
+                        <br> 
+                        长大成人方是我，合眼朦胧又是谁？ 
+                        <br>
+                        悲欢离合多劳意，何日清闲谁得知。 
+                        <br>
+                        口中吃得清和味，身上常披百衲衣。 
+                        <br>
+                        莫道僧家容易做，皆因累世种菩提。 
+                        <br>
+                        兔走鸟飞东复西，为人切莫用心机。 
+                        <br>
+                        禹尊九州汤罚夏，秦吞六国汉登基， 
+                </div>
+                
+             <div class="miskleft"></div>
+
+        </div>
+        <div class="contentright  content">
+               <div class="text">
+                    黄金白玉非足贵，唯有袈裟披最难。<br>
+                    百年三万六千日，不及僧家半日闲。 <br>
+                    未曾生我谁是我？生我之时我是谁？<br>
+                    不如不来亦不去，也无欢喜也无悲。 <br>
+                    世间难比出家人，无牵无挂得安闲。<br>
+                    五湖四海为上客，逍遥佛殿任君嘻。<br>
+                    虽然不是真罗汉，也搭如来三顶衣。<br>
+                    百年世事三更梦，万里江山一局棋。<br>
+                    古来多少英雄汉，南北山头卧土泥。<br>
+               </div>
+            <div class="miskright"></div>
+
+       </div>
+       <div class="zhouright zhou">
+           
+       </div>
+
+    </div>
+
+    
+</body>
+</html>

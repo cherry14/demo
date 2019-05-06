@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style >
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .container{
+        position: relative;
+        width: 1000px;
+        height: 300px;
+        background-color: rgb(161, 147, 68);
+        margin: 100px auto;
+       
+    }
+    .zhou{
+        width: 20px;
+        height: 300px;
+        background-color: #000;
+        position: absolute;
+        top: 0;
+        z-index: 5;
+    }
+    .zhou::before{
+        content: '';
+        width: 20px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #000;
+        position: absolute;
+        top: -28px;
+        left: 0;
+    }
+    .zhou::after{
+        content: '';
+        width: 20px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #000;
+        position: absolute;
+        bottom: -28px;
+        left: 0;
+    }
+    
+    .zhouleft{
+        left: 500px;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+        animation: zhouleft  5s ease  forwards;
+    }
+    @keyframes zhouleft{
+        0%{
+            left: 481px; 
+            
+        }
+        100%{
+            left: 0;
+           
+        }
+    }
+    .zhouright{
+        right: 0;
+        animation: zhouright  5s ease  forwards;
+    }
+    @keyframes zhouright{
+        0%{
+           right: 481px; 
+            
+        }
+        100%{
+            right: 0;
+           
+        }
+    }
+    
+    .content{
+        width: 500px;
+        height: 300px;
+        background-color:rgb(161, 147, 68) ;
+        float: left;
+        overflow: hidden;
+
+    }
+    .contentleft{
+      opacity: 1;
+    }
+    .contentright{
+      opacity: 1;
+    }
+    .contentleft>.miskleft{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 500px;
+        height: 300px;
+        background-color: #fff;
+        animation: miskleft  5s ease  forwards;
+        text-align: right;
+    }
+    @keyframes miskleft{
+        0%{
+           
+            left: 0;
+            
+        }
+        100%{
+            left: -500PX;
+           
+        }
+    }
+    .miskright{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 500px;
+        height: 300px;
+        text-align: left;
+        background-color: #FFF;
+        animation: miskright  5s ease   forwards ;
+    }
+    @keyframes miskright{
+        0%{
+           
+            right: 0;
+            
+        }
+        100%{
+            right: -500PX;
+           
+        }
+    }
+    .text{
+        position: absolute;
+        top:0;
+        left: 0;
+        opacity: 0;
+        animation:text  30s ease 1s  forwards ; 
+    }
+    @keyframes text{
+        0%{
+           opacity: 0;
+           left: 0;
+        }
+        10%{
+            opacity: 1;
+        }
+      
+        100%{
+            opacity: 1;
+            left:-3900px; 
+           
+           
+        }
+    }
+    .text>img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        float: left;
+
+    }
+    .text>.imgfirst{
+        z-index: 9;
+    }
+    .text>.imgsecond{
+        position: absolute;
+        top: 0px;
+        left:1468px;
+        z-index: 8;
+    }
+   
+    .text>.imgthird{
+        position: absolute;
+        top: 0px;
+        left:2425px ;
+        z-index: 7;
+    }
+    .text>.imgfouth{
+        position: absolute;
+        top: 0px;
+        left:3566px;  
+        z-index:6;                                                                                                                               
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="text">
+           <img src="./assets/q1.png" alt=""   class="imgfirst"   style="width:1470px;height:300px"> 
+           <img src="./assets/q2.png" alt=""   class="imgsecond"  style="width:1470px;height:300px"> 
+           <img src="./assets/q2.png" alt=""   class="imgthird"  style="width:1470px;height:300px"> 
+           <img src="./assets/q3.png" alt=""   class="imgfouth"  style="width:1470px;height:300px"> 
+        </div>
+
+        <div class="zhouleft zhou">
+
+        </div>
+        <div class="contentleft  ">
+                
+                
+             <div class="miskleft"></div>
+
+        </div>
+        <div class="contentright  ">
+               
+            <div class="miskright"></div>
+
+       </div>
+       <div class="zhouright zhou">
+           
+       </div>
+
+    </div>
+
+    
+</body>
+</html>
